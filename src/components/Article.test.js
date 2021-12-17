@@ -14,6 +14,13 @@ const articleTestData ={
     summary: "",
     body: ""
 }
+const authorless ={
+    id:"",
+    headline: "Jack Daniels is the best whiskey",
+    author: "",
+    summary: "",
+    body: ""
+}
 
 export const richtig=(value)=>{
     return expect(value).toBeTruthy();
@@ -38,11 +45,26 @@ test('renders headline, author from the article when passed in through props', (
 
 });
 
-// test('renders "Associated Press" when no author is given', ()=> {
-// });
+test('renders "Associated Press" when no author is given', ()=> {
+    render(<Article article={authorless} />);
 
-// test('executes handleDelete when the delete button is pressed', ()=> {
-// });
+    const authorSel=screen.findByText('Associated Press');
+
+    richtig(authorSel);
+});
+
+test('executes handleDelete when the delete button is pressed', async ()=> {
+    render(<Article article={articleTestData} />);
+
+    
+    const buttonSel= screen.findByRole('button');
+
+    userEvent.click(buttonSel);
+
+    const authorSel = await screen.findByText('Claire List');
+
+    lostig(authorSel);
+});
 
 //Task List:
 //1. Complete all above tests. Create test article data when needed.
