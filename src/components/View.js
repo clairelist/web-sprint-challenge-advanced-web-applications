@@ -36,8 +36,8 @@ useEffect(() => {
         })
     }
   
-    const handleEdit = (id) => {
-        axiosWithAuth().put(`/articles/${id}`); //just making request here...
+    const handleEdit = (article) => {
+        axiosWithAuth().put(`/articles/${article}`); //just making request here...
         
     }
 
