@@ -13,9 +13,9 @@ You are not allowed to collaborate during the sprint challenge.
 In this challenge you will create a login page and request a token from the server that you'll use to send all other requests to the server. You will then be able to fetch the article data array, update data, and delete data.
 
 ## Project Setup
-[ ] Run npm install to install your dependencies.
-[ ]  Run npm start to run your frontend and backend code automatically.
-[ ]  Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
+[X]  Run npm install to install your dependencies.
+[X]  Run npm start to run your frontend and backend code automatically.
+[X]  Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
 
 ## Project Instructions
 In this project, you will demonstrate your mastery of these skills by creating **a login page** and **basic CRUD application.** You will implement basic security using **token authentication** and build private routes within the application.
@@ -120,9 +120,17 @@ In this project, you will demonstrate your mastery of these skills by creating *
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. Explain what a token is used for.
+    Passing encrypted or protected data between the client and the server, for use ie in login components.
 
 2. What steps can you take in your web apps to keep your data secure?
+    Having a gitignore file with protected hashes kept from being exposed, as well as using authentication.
 
 3. Describe how web servers work.
+    The user will send a request and get a response back, in its most basic form.
 
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+    CRUD | HTTP
+  Create | POST
+  Read   | GET
+  Update | PUT or PATCH (archaic)
+  Delete | DELETE
