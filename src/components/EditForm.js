@@ -27,6 +27,7 @@ const EditForm = (props)=> {
         })
   },[]); //'on first mount, do this'
 
+  //OKAY so I know the PUT request is working, but for some reason it is not going through. 
     const handleChange = (e)=> {
         setArticle({
             ...article,
