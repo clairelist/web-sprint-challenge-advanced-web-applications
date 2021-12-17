@@ -2,14 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Login = () => {
-    
+    render(){
     return(<ComponentContainer>
         <ModalContainer>
             <h1>Welcome to Blogger Pro</h1>
             <h2>Please enter your account information.</h2>
-            <p>this is a test paragraph</p>
+            <form onSubmit={this.login}>
+          <input
+            id='username'
+            type="text"
+            name="username"
+            value={this.state.credentials.username}
+            onChange={this.handleChange}
+          />
+          <input
+            id='password'
+            type="password"
+            name="password"
+            value={this.state.credentials.password}
+            onChange={this.handleChange}
+          />
+          <button>Log in</button>
+        </form>
         </ModalContainer>
     </ComponentContainer>);
+}
 }
 
 export default Login;
