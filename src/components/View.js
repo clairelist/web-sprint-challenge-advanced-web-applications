@@ -25,11 +25,11 @@ useEffect(() => {
 },[]); //'on first mount, do this'
 
     const handleDelete = (id) => {
-       
         axiosWithAuth().delete(`http://localhost:5000/api/articles/${id}`)
         .then(res=>{
+
          // you DON'T NEED TO CALL ANOTHER FUNCTION, FUTURE CLAIRE.
-         
+
        setArticles(res.data);
         }).catch(err=>{
             console.log('error on handleDelete call ',err);
@@ -37,6 +37,8 @@ useEffect(() => {
     }
   
     const handleEdit = (article) => {
+        axiosWithAuth().put(`/articles/${article}`); //just making request here...
+        
     }
 
     const handleEditSelect = (id)=> {
@@ -74,7 +76,7 @@ export default View;
 //1. Build and import axiosWithAuth module in the utils. X
 //2. When the component mounts, make an http request that adds all articles to state. X
 //3. Complete handleDelete method. It should make a request that delete the article with the included id. X
-//4. Complete handleEdit method. It should make a request that updates the article that matches the included article param.
+//4. Complete handleEdit method. It should make a request that updates the article that matches the included article param. X
 
 
 const Container = styled.div`

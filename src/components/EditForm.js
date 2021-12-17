@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+
+import axiosWithAuth from './../utils/axiosWithAuth';
+
 
 const initialArticle = {
     id:"",
@@ -12,6 +15,17 @@ const initialArticle = {
 const EditForm = (props)=> {
     const [article, setArticle]  = useState(initialArticle);
     const {handleEdit, handleEditCancel, editId} = props;
+
+    useEffect(() => {
+        axiosWithAuth()
+        .get(`/articles/${editId}`)
+        .then(res=>{
+            
+            setArticle(res.data); //lives on 'res.data' !
+        }).catch(err=>{
+            console.error(err);
+        })
+  },[]); //'on first mount, do this'
 
     const handleChange = (e)=> {
         setArticle({
@@ -57,8 +71,8 @@ const EditForm = (props)=> {
 export default EditForm;
 
 //Task List:
-// 1. On mount, make a http request to retrieve the article with the id `editId.`
-// 2. Save result of request to local state.
+// 1. On mount, make a http request to retrieve the article with the id `editId.` X
+// 2. Save result of request to local state. X
 
 const FormContainer = styled.form`
     padding: 1em;
