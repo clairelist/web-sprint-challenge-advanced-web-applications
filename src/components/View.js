@@ -30,8 +30,8 @@ useEffect(() => {
         axiosWithAuth().delete(`http://localhost:5000/api/articles/${id}`)
         .then(res=>{
           props.handleDelete(res.data.id); //okay so this is deleting it, but it's only showing on page reload...
-           // console.log(res);
-           setArticles(res.data);
+           //console.log(res);
+         setArticles(res.data);
         }).catch(err=>{
             console.log('error on handleDelete call ',err);
         })
