@@ -16,7 +16,7 @@ const App = () => {
       <Header/>
       <RouteContainer>
         <Route exact path="/">
-          <Login/>
+          <Login />
         </Route>
 
         <Route path='/login'>
