@@ -58,7 +58,7 @@ class Login extends React.Component {
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <button>Log in</button>
+          <button id='submit'>Log in</button>
         </form>
         <p id='error'>{this.state.credentials.error}</p>
         </ModalContainer>
