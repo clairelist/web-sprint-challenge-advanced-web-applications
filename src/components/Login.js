@@ -9,7 +9,8 @@ class Login extends React.Component {
     state = {
         credentials: {
           username: '',
-          password: ''
+          password: '',
+          error: 'USERNAME & PASSWORD MUST MATCH THE REGISTER'
         }
       };
 

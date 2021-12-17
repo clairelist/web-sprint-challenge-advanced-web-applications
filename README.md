@@ -67,7 +67,7 @@ In this project, you will demonstrate your mastery of these skills by creating *
 * [X] In `Login.js`, build all UI and state functionality needed to capture a username and password. On a successful login, redirect user to the `View.js` component.
 * [X] **Make sure that the input for your username and password includes the id="username" and id="password" attributes. Codegrade autotests will fail without them.**
 * [X] **Make sure that the submit button to your login form includes the id="submit" attribute.  Codegrade autotests will fail without them.**
-* [ ] In `Login.js`, add a p tag that will display an error if one occurs. Add in all state functionality needed to support error display.
+* [X] In `Login.js`, add a p tag that will display an error if one occurs. Add in all state functionality needed to support error display.
 * [X] **Make sure your error p tag has an id="error" attribute attached. Codegrade autotests will fail without them.**
 * [X] Construct an http request that retrieves an auth token from the server when the username `Lambda` and the password `School` is passed into the request. Complete successful login auth flow and redirect to `View.js.`
 * [X] Display an appropriate error message when login is not successful.
@@ -93,7 +93,7 @@ In this project, you will demonstrate your mastery of these skills by creating *
 ### Logout Authentication
 > *Add in the http requests needed to logout of the application.*
 
-* [ ] In `Logout.js`, execute a http request to logout on mount. When the request is complete, the user's security token should be removed and the browser should redirect to the login page.
+* [X] In `Logout.js`, execute a http request to logout on mount. When the request is complete, the user's security token should be removed and the browser should redirect to the login page.
 
 ### Advanced Testing
 > *Add the following tests within Article.test.js.*
