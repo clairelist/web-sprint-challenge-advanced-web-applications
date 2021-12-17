@@ -12,7 +12,7 @@ const View = (props) => {
     const [editing, setEditing] = useState(false);
     const [editId, setEditId] = useState();
 
-    // const {id} = props.match.params;
+    
 
 useEffect(() => {
       axiosWithAuth()
@@ -24,19 +24,18 @@ useEffect(() => {
       })
 },[]); //'on first mount, do this'
 
-    
     const handleDelete = (id) => {
        
         axiosWithAuth().delete(`http://localhost:5000/api/articles/${id}`)
         .then(res=>{
-          props.handleDelete(res.data.id); //okay so this is deleting it, but it's only showing on page reload...
-           //console.log(res);
-         setArticles(res.data);
+         // you DON'T NEED TO CALL ANOTHER FUNCTION, FUTURE CLAIRE.
+         
+       setArticles(res.data);
         }).catch(err=>{
             console.log('error on handleDelete call ',err);
         })
     }
-
+  
     const handleEdit = (article) => {
     }
 
@@ -74,7 +73,7 @@ export default View;
 //Task List:
 //1. Build and import axiosWithAuth module in the utils. X
 //2. When the component mounts, make an http request that adds all articles to state. X
-//3. Complete handleDelete method. It should make a request that delete the article with the included id. 
+//3. Complete handleDelete method. It should make a request that delete the article with the included id. X
 //4. Complete handleEdit method. It should make a request that updates the article that matches the included article param.
 
 
