@@ -15,17 +15,11 @@ const App = () => {
       <BloomHeader/>
       <Header/>
       <RouteContainer>
-        <Route exact path="/">
-          <Login />
-        </Route>
-
-        <Route path='/login'>
-          <Login /> 
-        </Route>        
-
-        <PrivateRoute exact path='/view' component={View} />  
-
+      <PrivateRoute exact path='/view' component={View} />
+        <Route exact path="/" component={Login} />
         <PrivateRoute exact path='/logout' component={Logout} />
+        <Route path='/login' component={Login} />
+          
       </RouteContainer>
     </AppContainer>
   )
