@@ -25,7 +25,7 @@ useEffect(() => {
 },[]); //'on first mount, do this'
 
     const handleDelete = (id) => {
-        axiosWithAuth().delete(`http://localhost:5000/api/articles/${id}`)
+        axiosWithAuth().delete(`/articles/${id}`)
         .then(res=>{
 
          // you DON'T NEED TO CALL ANOTHER FUNCTION, FUTURE CLAIRE.
@@ -36,8 +36,8 @@ useEffect(() => {
         })
     }
   
-    const handleEdit = (article) => {
-        axiosWithAuth().put(`/articles/${article}`); //just making request here...
+    const handleEdit = (id) => {
+        axiosWithAuth().put(`/articles/${id}`); //just making request here...
         
     }
 
