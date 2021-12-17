@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import Header from './Header';
 import BloomHeader from './BloomHeader';
 import Login from './Login';
+import PrivateRoute from './PrivateRoute';
+import Logout from './Logout';
+import View from './View';
 
 const App = () => {
   return (
@@ -14,7 +17,15 @@ const App = () => {
       <RouteContainer>
         <Route exact path="/">
           <Login/>
-        </Route>          
+        </Route>
+
+        <Route path='/login'>
+          <Login /> 
+        </Route>        
+
+        <PrivateRoute path='/view' component={View} />  
+
+        <PrivateRoute path='/logout' component={Logout} />
       </RouteContainer>
     </AppContainer>
   )
@@ -23,10 +34,10 @@ const App = () => {
 export default App;
 
 //Task List
-//1. Create and import PrivateRoute component.
-//2. Create a Route for Login pointing to '/login.'
-//3. Create a PrivateRoute for View component point to '/view.'
-//4. Create a PrivateRoute for Logout component pointing to '/logout.'
+//1. Create and import PrivateRoute component. X
+//2. Create a Route for Login pointing to '/login.' X
+//3. Create a PrivateRoute for View component point to '/view.' X
+//4. Create a PrivateRoute for Logout component pointing to '/logout.' X
 
 
 const AppContainer = styled.div`
