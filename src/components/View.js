@@ -37,7 +37,7 @@ useEffect(() => {
     }
   
     const handleEdit = (article) => {
-        axiosWithAuth().put(`/articles/${article}`); //just making request here...
+        axiosWithAuth().put(`/articles/${editId}`,article); //just making request here...
         
     }
 
