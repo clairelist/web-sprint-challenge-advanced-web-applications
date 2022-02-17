@@ -14,7 +14,7 @@ const initialArticle = {
 
 const EditForm = (props)=> {
     const [article, setArticle]  = useState(initialArticle);
-    const {handleEdit, handleEditCancel, editId} = props;
+    const {handleEdit, handleEditToggle, editId} = props;
 
     useEffect(() => {
         axiosWithAuth()
@@ -38,13 +38,13 @@ const EditForm = (props)=> {
     const handleSubmit = (e) => {
         e.preventDefault();
         handleEdit(article);
+        handleEditToggle();
        
     }
 
-
     const handleCancel = (e) => {
         e.preventDefault();
-        handleEditCancel();
+        handleEditToggle();
     }
 
     return(<FormContainer onSubmit={handleSubmit}>

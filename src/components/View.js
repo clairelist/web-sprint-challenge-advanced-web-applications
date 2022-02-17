@@ -37,7 +37,12 @@ useEffect(() => {
     }
   
     const handleEdit = (article) => {
-        axiosWithAuth().put(`/articles/${editId}`,article); //just making request here...
+        axiosWithAuth().put(`/articles/${editId}`,article) //just making request here...
+        .then(res=>{
+            setArticles(res.data)
+        }).catch(err=>{
+            console.error(err);
+        })
         
     }
 
@@ -46,7 +51,7 @@ useEffect(() => {
         setEditId(id);
     }
 
-    const handleEditCancel = ()=>{
+    const handleEditToggle = ()=>{
         setEditing(false);
     }
 
@@ -64,7 +69,7 @@ useEffect(() => {
             </ArticleContainer>
             
             {
-                editing && <EditForm editId={editId} handleEdit={handleEdit} handleEditCancel={handleEditCancel}/>
+                editing && <EditForm editId={editId} handleEdit={handleEdit} handleEditToggle={handleEditToggle}/>
             }
         </ContentContainer>
     </ComponentContainer>);
